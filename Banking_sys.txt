@@ -1,0 +1,41 @@
+
+CREATE TABLE customers(
+personID int,
+first_name varchar(50),
+last_name  varchar(50),
+contact varchar(15),
+email  varchar(20) unique,
+amount double,
+
+PRIMARY KEY(personID)
+);
+
+CREATE TABLE transaction (
+transferID int,
+personID int,
+sender varchar(30),
+reciever varchar(30),
+amount double,
+currentDate date,
+
+FOREIGN KEY (personID) REFERENCES customers(personID) on delete cascade,
+PRIMARY KEY(transferID)  
+);
+
+
+
+INSERT INTO customers(personID,first_name,last_name,contact,email,amount)
+values( 1,	'Sadia'	,'Munir',	'3339871234',	'smunir@gmail.com',' 50000'),
+(2,	'Saad',	'Awan',	'3337465786',	'sawan@gmail.com','67000'),
+(3,	'Ahmad',	'Malik',	'3323458763', 'amalik@gmail.com',	' 14000'),
+(4,	'John',	'Brown',	'3346578978', 'jbrown@gmail.com', ' 50000'),
+(5	,'Linda'	,'Black'	,'3356478765'	, 'lblack@gmail.com', ' 23100'),
+(6,	'Alex',	'Brad',	'3345678576'	,'abrad@gmail.com', ' 5000'),
+(7	,'Jake '	,'Black'	,'33456787654'	,'jake123@gmail.com'	,' 13000'),
+(8,	'Zainab',	'Ahmad',	'33456787654',	'zahmad@gmail.com',	' 1000'),
+(9,	'Zonaira'	,'Munir',	'33456787654'	,'zmunir@gmail.com'	,' 20000'),
+(10,'Ibrahim',	'Ahmad',	'33456787654',	'aibrahim@gmail.com','5000');
+
+INSERT INTO transaction(transferID, personID, sender , reciever,amount, date)
+values( 1, 4,	'John Brown'	,'Jake Black','50000', '2021-04-04'),
+(2,6,	'Alex Brad',	'Linda Black',' 67000', '2021-03-21');
