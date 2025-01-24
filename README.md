@@ -14,5 +14,3 @@ The Transaction table records all transfers happened along with the date on whic
 The Flow of the Website is as follows:
 Home Page > View all Users > Select and View one User > Transfer Money > Select reciever > View all Users > View Transfer History.
 
-# Demo video link
-https://www.linkedin.com/posts/sadia-munir-59bb6317a_gripapril2021-gripapril21-gripapr21-activity-6790618634495635456-SrKX?utm_source=share&utm_medium=member_desktop
